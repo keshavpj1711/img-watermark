@@ -21,3 +21,8 @@
 - Showing actual preview of what is selected.
 - improving the gui of application.
 - adding a default watermark feature.
+
+
+### Basic layout
+
+![](./IMG_0209.jpeg)
