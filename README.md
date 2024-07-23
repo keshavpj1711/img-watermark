@@ -1,15 +1,15 @@
 # Image Watermark
 
 ## What are we going to use: 
-- pillow library(a fork of PIL, to work with images)
+- pillow library(to work with images)
 - tkinter(to make our gui)
 
 ## Planning out 
 
 ### Number of features to be implemented
 
-- It should be able to take text input from the user.
-- Ability to change font style, size and color of the added text.
+- Text input from the user
+- Change font style, size and color of the added text.
 - Tiling of the text: 
   - Single
   - Multiple horizontally or 
@@ -18,7 +18,8 @@
 
 ### Features which may be considered for future updates
 
-- Opacity
+- Adding an image or logo as watermark
+- Opacity of the text
 - improving the gui of application.
 - adding a default watermark feature.
 
