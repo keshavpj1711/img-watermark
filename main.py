@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 
+
 # Resizing image with PIL
 def resize_image(image_path, width, height):
   # Opening image
@@ -9,6 +10,21 @@ def resize_image(image_path, width, height):
   rszd_image = image.resize((width, height))
 
   return rszd_image
+
+
+# A funtion to update the image by calling all the function with the respective info in the text boxes
+def update_img():
+  # 1. Take text from text_entry and update on the image
+  # 2. Apply the font color 
+  # 3. Apply the font size
+  # 4. Apply the types
+  # 5. Add the rotation to the text
+  pass
+
+
+def generate_img():
+  # Save the image in the same directory where the program was ran
+  pass
 
 
 root = Tk()  # create root window
@@ -64,7 +80,7 @@ rotate = Label(left_frame, text='Rotate', font=("Arial", 12, "normal"), bg='whit
 rotate.grid(row=5, column=0, pady=5)
 # A dropdown to select type is to be added
 
-preview = Button(left_frame, text='Preview', width=20, bg='deep sky blue', activebackground='dodger blue', fg='white', activeforeground='white')
+preview = Button(left_frame, text='Preview', width=20, bg='deep sky blue', activebackground='dodger blue', fg='white', activeforeground='white', command=update_img)
 preview.grid(row=6, column=0, pady=(5, 10))
 
 generate = Button(left_frame, text='Generate', width=20, bg='deep sky blue', activebackground='dodger blue', fg='white', activeforeground='white')
