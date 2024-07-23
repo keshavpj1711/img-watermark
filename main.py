@@ -1,18 +1,26 @@
-import tkinter as tk
+from tkinter import *
 
-# Creating the window
-window = tk.Tk()
-window.title("img_watermark")
-window.config(bg="skyblue")
+root = Tk()  # create root window
+root.title("Basic GUI Layout")  # title of the GUI window
+
+# Setting a maxsize to open floating windows in tiling wm
+root.maxsize(1800, 900)
+root.geometry("1800x900")
+
+# bg color
+root.config(bg="skyblue")  
+
+# Creating left frame
+left_frame = Frame(root, width=400, height=880, bg='white')
+left_frame.grid(row=0, column=0, padx=10, pady=10)
+
+# Original image 
+image_path = "image.png"
+org_image = PhotoImage(image_path)
+org_image = org_image.subsample(3,3)
+Label(left_frame, image=org_image).grid(row=0, column=0, padx=5, pady=5)
 
 
-# Creating the main preview window
-preview_frame = tk.Frame(window, width=500, height=350, bg="white")
-preview_frame.grid(row=0, column=1, padx=10, pady=10)
 
-# Creating a frame for tool/edit area
-tool_frame = tk.Frame(window, width=500, height=550, bg="white")
-tool_frame.grid(row=1, column=1, padx=10, pady=10)
 
-# To prevent screen from shutting off 
-tk.mainloop()
+root.mainloop()
