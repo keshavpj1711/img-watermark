@@ -43,18 +43,31 @@ text_label.grid(row=1, column=0, pady=5)
 text_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
 text_entry.grid(row=1, column=1, pady=5)
 
-# Adding buttons 
-font_style = Button(left_frame, text='Font Style', width=20)
-font_style.grid(row=2, column=0, pady=5)
-font_color = Button(left_frame, text='Font Color', width=20)
-font_color.grid(row=2, column=1, pady=5)
-font_size = Button(left_frame, text='Font Size', width=20)
-font_size.grid(row=3, column=0, pady=5)
-types = Button(left_frame, text='Types', width=20)
-types.grid(row=3, column=1, pady=5)
-rotate = Button(left_frame, text='Rotate', width=20)
-rotate.grid(row=4, column=0, pady=(5, 10))
+# Adding functionalities
+font_style_label = Label(left_frame, text="Font color", font=("Arial", 12, "normal"), bg='white', fg='black')
+font_style_label.grid(row=2, column=0, pady=5)
+# For text entry 
+font_style_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
+font_style_entry.grid(row=2, column=1, pady=5)
+
+font_size_label = Label(left_frame, text="Font size", font=("Arial", 12, "normal"), bg='white', fg='black')
+font_size_label.grid(row=3, column=0, pady=5)
+# For text entry 
+font_size_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
+font_size_entry.grid(row=3, column=1, pady=5)
+
+types = Label(left_frame, text='Types', font=("Arial", 12, "normal"), bg='white', fg='black')
+types.grid(row=4, column=0, pady=5)
+# A dropdown to select type is to be added
+
+rotate = Label(left_frame, text='Rotate', font=("Arial", 12, "normal"), bg='white', fg='black')
+rotate.grid(row=5, column=0, pady=5)
+# A dropdown to select type is to be added
+
+preview = Button(left_frame, text='Preview', width=20, bg='deep sky blue', activebackground='dodger blue', fg='white', activeforeground='white')
+preview.grid(row=6, column=0, pady=(5, 10))
+
 generate = Button(left_frame, text='Generate', width=20, bg='deep sky blue', activebackground='dodger blue', fg='white', activeforeground='white')
-generate.grid(row=4, column=1, pady=(5, 10))
+generate.grid(row=6, column=1, pady=(5, 10))
 
 root.mainloop()
