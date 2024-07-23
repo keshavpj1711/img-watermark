@@ -25,4 +25,4 @@
 
 ### Basic layout
 
-![](./IMG_0209.jpeg)
+![](./layout.png)
