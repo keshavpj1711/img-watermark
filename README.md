@@ -14,11 +14,11 @@
   - Single
   - Multiple horizontally or 
   - rotated at an angle
-- Opacity
+- Showing actual preview of what is selected.
 
 ### Features which may be considered for future updates
 
-- Showing actual preview of what is selected.
+- Opacity
 - improving the gui of application.
 - adding a default watermark feature.
 
