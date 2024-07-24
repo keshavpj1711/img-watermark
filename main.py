@@ -13,13 +13,34 @@ def resize_image(image_path, width, height):
 
 
 # A funtion to update the image by calling all the function with the respective info in the text boxes
-def update_img():
-  # 1. Take text from text_entry and update on the image
-  # 2. Apply the font color 
-  # 3. Apply the font size
-  # 4. Apply the types
-  # 5. Add the rotation to the text
-  pass
+def display_preview(image_path):
+  preview_img = resize_image(image_path, 1140, 780)
+  preview_img = ImageTk.PhotoImage(preview_img)
+  
+  # Update the label with the new image
+  if hasattr(display_preview, 'label'):  # Check if label exists
+      display_preview.label.configure(image=preview_img)
+  else:
+      display_preview.label = Label(right_frame, image=preview_img)
+      display_preview.label.grid(row=0, column=0)
+  
+  display_preview.label.image = preview_img  # Keep a reference to avoid garbage collection
+
+
+
+def add_text():
+  get_text = text_entry.get()
+  return get_text
+
+
+def add_font_color():
+  get_font_color = font_color_entry,get()
+  return get_font_color
+
+
+def add_font_size():
+  get_font_size = font_size_entry.get()
+  return get_font_size
 
 
 def generate_img():
@@ -60,11 +81,11 @@ text_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"
 text_entry.grid(row=1, column=1, pady=5)
 
 # Adding functionalities
-font_style_label = Label(left_frame, text="Font color", font=("Arial", 12, "normal"), bg='white', fg='black')
-font_style_label.grid(row=2, column=0, pady=5)
+font_color_label = Label(left_frame, text="Font color", font=("Arial", 12, "normal"), bg='white', fg='black')
+font_color_label.grid(row=2, column=0, pady=5)
 # For text entry 
-font_style_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
-font_style_entry.grid(row=2, column=1, pady=5)
+font_color_entry = Entry(left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
+font_color_entry.grid(row=2, column=1, pady=5)
 
 font_size_label = Label(left_frame, text="Font size", font=("Arial", 12, "normal"), bg='white', fg='black')
 font_size_label.grid(row=3, column=0, pady=5)
