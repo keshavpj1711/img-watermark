@@ -12,10 +12,11 @@ class UserInterface:
 
     # Configuring bg
     self.root.config(bg='deep sky blue')
-    self.setup_gui()
+    # Setting image path
+    self.img_path = "image.png"
 
-    # Configuring
-    self.img_path = None
+    self.setup_gui()
+    
 
   def setup_gui(self):
     self.left_frame = Frame(self.root, width=400, height=780, bg='white')
@@ -26,18 +27,23 @@ class UserInterface:
 
     # Left frame
     self.resized_image = ImageProcessing.resize_image(self.img_path, 400, 225)
-    self.tk_image = ImageTk.PhotoImage(resized_image)
-    Label(left_frame, image=tk_image).grid(
-        row=0, column=0, padx=5, pady=5, columnspan=2)
+    Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
+
+    load_button = Button(self.left_frame, text="Load", width=20)
+    load_button.grid(row=1, column=0, columnspan=2)
 
     # Adding a text box
     self.text_label = Label(self.left_frame, text="Enter your text", font=(
         "Arial", 12, "normal"), bg='white', fg='black')
-    self.text_label.grid(row=1, column=0, pady=5)
+    self.text_label.grid(row=2, column=0, pady=5)
     # For text entry
     self.text_entry = Entry(self.left_frame, width=20, bg='white', font=(
         "Arial", 12, "normal"), fg='black')
-    self.text_entry.grid(row=1, column=1, pady=5)
+    self.text_entry.grid(row=2, column=1, pady=5)
+
+  def load_path():
+    # This will give a dialog box to select the image from the menu
+    pass
 
   def run(self):
     self.root.mainloop()
