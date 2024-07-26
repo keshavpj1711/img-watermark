@@ -8,3 +8,6 @@ class ImageProcessing:
     image = ImageTk.PhotoImage(image)
 
     return image
+
+  def draw_image(image_path, text, font_size, font_color, type, rotation):
+    pass
