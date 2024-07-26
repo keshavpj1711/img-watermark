@@ -50,6 +50,18 @@ class UserInterface:
     self.font_color_entry = Entry(self.left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
     self.font_color_entry.grid(row=4, column=1, pady=5)
 
+    self.type = Label(self.left_frame, text="Type", width=20 , bg='white', fg='black', font=("Arial", 12, "normal"))
+    self.type.grid(row=5, column=0, pady=5)
+
+    self.rotate = Label(self.left_frame, text="Rotate", width=20 , bg='white', fg='black', font=("Arial", 12, "normal"))
+    self.rotate.grid(row=6, column=0, pady=5)
+
+    preview_button = Button(self.left_frame, text="Preview", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
+    preview_button.grid(row=7, column=0, pady=5)
+
+    generate_button = Button(self.left_frame, text="Generate`", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
+    generate_button.grid(row=7, column=1, pady=5)
+
   def load_path(self):
     # This will give a dialog box to select the image from the menu
     self.img_path = filedialog.askopenfilename(
@@ -60,8 +72,12 @@ class UserInterface:
 
     self.setup_gui()
 
-  def display_prev_and_org_img(self):
-    # This is to display the image on original image pane and preview pane
+  def display_org(self):
+    # This is to display the image on original image pane
+    pass
+
+  def display_prev(self):
+    # To preview image after changes
     pass
 
   def run(self):
