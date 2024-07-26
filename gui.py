@@ -52,5 +52,9 @@ class UserInterface:
 
     self.setup_gui()
 
+  def display_prev_and_org_img(self):
+    # This is to display the image on original image pane and preview pane
+    pass
+
   def run(self):
     self.root.mainloop()
