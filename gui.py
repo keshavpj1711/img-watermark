@@ -80,5 +80,9 @@ class UserInterface:
     # To preview image after changes
     pass
 
+  def save_image(self):
+    # To save image when clicked generate_button
+    pass
+    
   def run(self):
     self.root.mainloop()
