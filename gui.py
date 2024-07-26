@@ -30,17 +30,25 @@ class UserInterface:
     self.resized_image = ImageProcessing.resize_image(self.img_path, 400, 225)
     Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
 
-    load_button = Button(self.left_frame, text="Load", width=20, command=self.load_path)
+    load_button = Button(self.left_frame, text="Load", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
     load_button.grid(row=1, column=0, columnspan=2)
 
     # Adding a text box
-    self.text_label = Label(self.left_frame, text="Enter your text", font=(
-        "Arial", 12, "normal"), bg='white', fg='black')
+    self.text_label = Label(self.left_frame, text="Enter your text", font=("Arial", 12, "normal"), bg='white', fg='black')
     self.text_label.grid(row=2, column=0, pady=5)
     # For text entry
-    self.text_entry = Entry(self.left_frame, width=20, bg='white', font=(
-        "Arial", 12, "normal"), fg='black')
+    self.text_entry = Entry(self.left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
     self.text_entry.grid(row=2, column=1, pady=5)
+
+    self.font_size = Label(self.left_frame, text="Font Size", width=20, font=("Arial", 12, "normal"), bg='white', fg='black')
+    self.font_size.grid(row=3, column=0, pady=5)
+    self.font_size_entry = Entry(self.left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
+    self.font_size_entry.grid(row=3, column=1, pady=5)
+
+    self.font_color = Label(self.left_frame, text="Font Color", width=20, font=("Arial", 12, "normal"), bg='white', fg='black')
+    self.font_color.grid(row=4, column=0)
+    self.font_color_entry = Entry(self.left_frame, width=20, bg='white', font=("Arial", 12, "normal"), fg='black')
+    self.font_color_entry.grid(row=4, column=1, pady=5)
 
   def load_path(self):
     # This will give a dialog box to select the image from the menu
