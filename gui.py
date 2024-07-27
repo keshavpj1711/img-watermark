@@ -14,7 +14,7 @@ class UserInterface:
     # Configuring bg
     self.root.config(bg='deep sky blue')
     # Setting image path
-    self.img_path = "image.png"
+    self.img_path = None
 
     self.setup_gui()
     
@@ -26,9 +26,7 @@ class UserInterface:
     self.right_frame = Frame(self.root, width=1150, height=780, bg='white')
     self.right_frame.grid(row=0, column=1, padx=10, pady=10)
 
-    # Left frame
-    self.resized_image = ImageProcessing.resize_image(self.img_path, 400, 225)
-    Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
+    self.display_org()
 
     load_button = Button(self.left_frame, text="Load", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
     load_button.grid(row=1, column=0, columnspan=2)
@@ -69,12 +67,19 @@ class UserInterface:
         title="Select file", 
         filetypes=(("all files", "*.*"), ("Image files", "*.jpg;*.jpeg;*.png;*.bmp"))
     )
+    self.display_org()
 
     self.setup_gui()
 
   def display_org(self):
-    # This is to display the image on original image pane
-    pass
+    try:
+      # This is to display the image on original image pane
+      self.resized_image = ImageProcessing.resize_image(self.img_path, 400, 225)
+      Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
+    except:
+      self.img_path = "white.png"
+      self.resized_image = ImageProcessing.resize_image(self.img_path, 400, 225)
+      Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
 
   def display_prev(self):
     # To preview image after changes
