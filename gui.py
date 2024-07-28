@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 from image_processing import ImageProcessing
+from PIL import ImageTk
 
 
 class UserInterface:
@@ -82,8 +83,12 @@ class UserInterface:
       Label(self.left_frame, image=self.resized_image).grid(row=0, column=0, padx=5, pady=5, columnspan=2)
 
   def display_prev(self):
-    # To preview image after changes
-    pass
+    font_size_text = self.font_size_entry.get()
+    font_color_text = self.font_color_entry.get()
+    text = self.text_entry.get()
+    image = ImageProcessing.draw_image(self.img_path, text, font_size_text, font_color_text)
+    self.prev_img = ImageTk.PhotoImage(image)
+    
 
   def save_image(self):
     # To save image when clicked generate_button
