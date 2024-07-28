@@ -1,4 +1,4 @@
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageDraw, ImageFont
 
 
 class ImageProcessing:
@@ -10,4 +10,10 @@ class ImageProcessing:
     return image
 
   def draw_image(image_path, text, font_size, font_color, type, rotation):
-    pass
+    image = Image.open(image_path)
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype("arial.ttf", font_size)
+
+    draw.text((10, 10), text, fill=font_color, font=font)
+
+    return image
