@@ -91,7 +91,7 @@ class UserInterface:
     
 
   def save_image(self):
-    # To save image when clicked generate_button
+    # To save image in the current directory
     pass
     
   def run(self):
