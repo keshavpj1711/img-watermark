@@ -55,7 +55,7 @@ class UserInterface:
     self.rotate = Label(self.left_frame, text="Rotate", width=20 , bg='white', fg='black', font=("Arial", 12, "normal"))
     self.rotate.grid(row=6, column=0, pady=5)
 
-    preview_button = Button(self.left_frame, text="Preview", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
+    preview_button = Button(self.left_frame, text="Preview", width=20, command=self.display_prev, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
     preview_button.grid(row=7, column=0, pady=5)
 
     generate_button = Button(self.left_frame, text="Generate`", width=20, command=self.load_path, bg="deep sky blue", fg="white", activebackground="dodger blue", activeforeground="white")
